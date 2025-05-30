@@ -1,0 +1,24 @@
+{
+  "name": "coding-ninjas-intern",
+  "version": "1.0.0",
+  "description": "**SankalpiQ** is a modular, AI-powered multi-agent system designed to assist NGOs in streamlining their outreach, onboarding, data collection, and volunteer engagement operations. The system leverages language models, automation frameworks, and communication APIs to create a fully autonomous support infrastructure that reduces manual workload and improves impact efficiency.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*.{py}": [
+      "black",
+      "flake8"
+    ]
+  }
+}

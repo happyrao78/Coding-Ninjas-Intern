@@ -1,0 +1,12 @@
+*chrome_user_data
+*chrome-data
+*.env
+*__pycache__
+*audio_cache
+*node_modules
+*package-lock.json
+
+*whatsapp-automation
+*calling-agent
+*flght-booking-agent
+*scrap-articles
