@@ -1,46 +1,15 @@
-from fastapi import FastAPI, Request
+from fastapi import APIRouter, Request
 from fastapi.responses import Response
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import urllib.parse
-import sys
-from dotenv import load_dotenv
-import os
-from sheets_integration import *
-# Import all functions from main.py
-from agent import *
+from services.translation_service import translate_to_english
+from services.data_service import save_user_data_to_csv, save_user_data_to_sheet
+from utils.formatters import format_email, format_blood_group
 
-# Set console encoding to UTF-8 to properly display Hindi characters
-sys.stdout.reconfigure(encoding='utf-8')
 
-load_dotenv()
-app = FastAPI()
+voice_router = APIRouter()
 
-# Get Twilio numbers from environment variables
-from_number = os.getenv("TWILIO_PHONE_NUMBER")
-to_number = os.getenv("TO_NUMBER")
-
-# Define your webhook URL (will need to be updated when deployed)
-WEBHOOK_URL = os.getenv("WEBHOOK_URL")
-
-@app.get("/")
-def read_root():
-    return {"status": "Calling agent server is running"}
-
-@app.get("/make-call")
-def make_call():
-    """Triggers a call from Twilio number to your number"""
-    try: 
-        call = client.calls.create(
-            to=to_number,
-            from_=from_number,
-            url=f"{WEBHOOK_URL}/voice"
-        )
-        return {"message": "NGO Call initiated to Happy Yadav!", "sid": call.sid}
-    except Exception as e:
-        print(f"Error making call: {e}")
-        return {"message": "Error making call", "error": str(e)}
-
-@app.post("/voice")
+@voice_router.post("/voice-info")
 async def voice(request: Request):
     try:
         params = dict(request.query_params)
@@ -49,13 +18,13 @@ async def voice(request: Request):
         response = VoiceResponse()
         gather = Gather(
             input="speech",
-            action=f"/handle-name?attempt={attempt}",
+            action=f"/handle-info-name?attempt={attempt}",
             method="POST",
             timeout=5,
             language="hi-IN"
         )
         gather.say(
-            "<speak><prosody rate='fast'>नमस्ते! मैं sambhav फाउंडेशन से बात कर rahi हूँ। कृपया अपना नाम बताइए।</prosody></speak>",
+            "<speak><prosody rate='fast'>नमस्ते! मैं prereet फाउंडेशन से बात कर rahi हूँ। कृपया अपना नाम बताइए।</prosody></speak>",
             voice="Polly.Aditi",
             language="hi-IN",
             ssml=True
@@ -63,7 +32,7 @@ async def voice(request: Request):
         response.append(gather)
 
         # Fallback if no input is received after Gather
-        response.redirect(f"/handle-name?attempt={attempt}")
+        response.redirect(f"/handle-info-name?attempt={attempt}")
         
         return Response(content=str(response), media_type="application/xml")
     except Exception as e:
@@ -72,7 +41,7 @@ async def voice(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.post("/handle-name")
+@voice_router.post("/handle-info-name")
 async def handle_name(request: Request):
     try:
         form_data = await request.form()
@@ -95,7 +64,7 @@ async def handle_name(request: Request):
                 language="hi-IN",
                 ssml=True
             )
-            response.redirect(f"/voice?attempt={attempt + 1}")
+            response.redirect(f"/voice-info?attempt={attempt + 1}")
         else:
             response.say(
                 "<speak><prosody rate='fast'>हमें आपका नाम नहीं मिला। कॉल समाप्त की जा रही है। फाउंडेशन से संपर्क करने के लिए धन्यवाद।</prosody></speak>",
@@ -112,7 +81,7 @@ async def handle_name(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.post("/voice-email")
+@voice_router.post("/voice-email")
 async def voice_email(request: Request):
     try:
         name = request.query_params.get("name", "")
@@ -142,7 +111,7 @@ async def voice_email(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.post("/handle-email")
+@voice_router.post("/handle-email")
 async def handle_email(request: Request):
     try:
         form_data = await request.form()
@@ -171,7 +140,7 @@ async def handle_email(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.post("/voice-blood")
+@voice_router.post("/voice-blood")
 async def voice_blood(request: Request):
     try:
         name = urllib.parse.unquote(request.query_params.get("name", ""))
@@ -201,7 +170,7 @@ async def voice_blood(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.post("/handle-blood")
+@voice_router.post("/handle-blood")
 async def handle_blood(request: Request):
     try:
         form_data = await request.form()
@@ -258,12 +227,5 @@ async def handle_blood(request: Request):
         response.say("Sorry, there was an error with the application.")
         return Response(content=str(response), media_type="application/xml")
 
-@app.get("/healthcheck")
-def healthcheck():
-    """Simple endpoint to check if the server is running"""
-    return {"status": "healthy", "message": "Prerit Foundation Call Agent is operational"}
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
+
