@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lofty-seer-457323-p7",
+  "private_key_id": "99057e124a49767e7fe7b106cd6214fde109a731",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDcUFlPJPMF/L13\nNhCtuL7MWKh6966tJsRK1OArtoNsZq2qM6ywfP3IwsQ3jqxnFkP3r68u+OoTXRhq\nb/YwMGsil6zDPuM9pfe33BerBG3Sn3vMvptvx/x0IjHeoW2Y7VBvvLcDDArRZGec\nKlE0fAqm0mJRvGLxh3U2QQiWOSjqfaNa2WdE4jAq2tC/f7tyPKnQefmhAwN7NjJV\ndHJ/dIgK2BCh9p+hGMvHccDWfYFWmoTzD1/GaIdFQ3dzQKHHpixFqRRyOP0aclwH\nYbeW9N/qmX9j6EoQIeyK+Tvu9vUR2e8fjZP12D9j0jhUaBP+7CdnmT2cHTa2r6gq\nxLrgIlbHAgMBAAECggEAQ5raVPl7I56zSxYJly1mSxF3nchMTzDisi3RnkhS2txF\nNUHHH58zRzxQ9tVunPGNqL897BWQyqFaISs7Kf1pmsNdTcqJ87xun/pHPwDMbIHo\n/OKOkwYUt1RY5j62AWPtN2R66lHzLd74Fkk8AvV/VUKgzgEXgZM2ChB5wJNItW+H\nb+XeQF8DIqQyFcflNvsiFxtYVGSQbfoVf4LtppmkOGCju8nHjal78Fl/zjThXkIz\nCoJPXxgHH2UajC41ujEKfXj1LG2KGinZnRiju9TiefmlY+tOnlPXlrlTftUm/10I\nObQ8cDwlc7FkkHZs4yJdywYEEr1f/k8S/b0ZRUAezQKBgQD1oqnh7KNCLLbavFFR\n/fzYzN4NGDHY9iGMxaHJ0UKPaGFyrISoyoJaTYDUZ1S0AabvMFHfP7NVgiO8QWg3\nh8vzPbmhmNoaH1vxxF+HNXgO0Z31s5jh3X2Ug3KEjJBk9vMSqD2Zh7XbzvxcHcFw\nG3Oi7UtwKwVpqvhLIisNp3hNswKBgQDlnCnq/PH90FJ6ipMFWx3SK2CcYqrnKQhB\nNMziScekgQY4EKeYqJUJDPTzVmKUwmm+jN7EJb2mhqya1rD5LEvW0KhM95GvGtYB\nfAplOng5TE6Zw/S2ygEtEOCUIkeHt03zh3rGCQch5FjM+LcBjx7qDjf+z38x2YQV\noP+t6sKQnQKBgDW8VQ/AleKHJ6VoZx3Zw3OmNbmFnnoJNkO2hHNDHR2ERzUv+oF2\nc9fPdqyAwm3yopNW7cI6DEBbjPfFE0h6o6pdyXtJlgT68UFNpVxN3SrYvoaeuIZI\nzw0rSGUo3vnHcFuXhIpOvwEMIfcA521gBAcThFpQfwmjxlehbOu6xD2zAoGBAKb6\nRlGp2aInWZPcKsb+WFV7TirsZjTtVh91cnouBY3QduFW20rdbmTCk3BTJiXgrF3y\nvB4RBDaSQfvonZLXb9+spngyojOhZHh36GdtefjRUWfpZZF4nhpT575Sn4pG991e\nbR6Peixfj2SgixYLKwQziu03oNxzvuarysSDsTLRAoGBAOj22s90H9VIAkrvS5bm\nJpGjdHDnAbt7JKIdXu7G+uIIuBD3PFZAfzePU2JNcOCvV4YBtwZ/ENUivTlehuj2\nJFf/lI0fUubpH7pXZ/Dfat637GW63FNDNqEvrdqUi3IK2RbLgxLQfNOnhD6CnpaX\n5NinzHLNpaqUIMM3IU564785\n-----END PRIVATE KEY-----\n",
+  "client_email": "info-collecting-agent@lofty-seer-457323-p7.iam.gserviceaccount.com",
+  "client_id": "100000941894446133805",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/info-collecting-agent%40lofty-seer-457323-p7.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,49 @@
+fastapi
+uvicorn
+twilio
+python-dotenv
+googletrans==4.0.0-rc1
+google-generativeai
+python-multipart
+pandas
+gspread
+oauth2client
+email-validator==2.1.0.post1
+
+voice-agent/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── main.py
+├── config/
+│   ├── __init__.py
+│   ├── settings.py
+│   └── database.py
+├── agents/
+│   ├── __init__.py
+│   ├── base_agent.py
+│   ├── voice_agent.py
+│   └── knowledge_agent.py
+├── services/
+│   ├── __init__.py
+│   ├── twilio_service.py
+│   ├── translation_service.py
+│   ├── email_service.py
+│   ├── sheets_service.py
+│   └── database_service.py
+├── models/
+│   ├── __init__.py
+│   ├── user_model.py
+│   └── schemas.py
+├── utils/
+│   ├── __init__.py
+│   ├── formatters.py
+│   └── validators.py
+├── data/
+│   ├── knowledge.txt
+│   └── voice_agent.db
+├── credentials/
+│   └── lofty-seer-457323-p7-99057e124a49.json
+└── logs/
+    └── app.log
