@@ -24,7 +24,7 @@ async def voice(request: Request):
             language="hi-IN"
         )
         gather.say(
-            "<speak><prosody rate='fast'>नमस्ते! मैं prereet फाउंडेशन से बात कर rahi हूँ। कृपया अपना नाम बताइए।</prosody></speak>",
+            "<speak><prosody rate='fast'>नमस्ते! मैं sankalpiq फाउंडेशन से बात कर rahi हूँ। कृपया अपना नाम बताइए।</prosody></speak>",
             voice="Polly.Aditi",
             language="hi-IN",
             ssml=True
@@ -155,7 +155,7 @@ async def voice_blood(request: Request):
             language="hi-IN"
         )
         gather.say(
-            f"<speak><prosody rate='fast'>शुक्रिया {name}! कृपया अपना blood group बताइए। यह जानकारी sambhav फाउंडेशन के पास सुरक्षित रहेगी।</prosody></speak>",
+            f"<speak><prosody rate='fast'>शुक्रिया {name}! कृपया अपना blood group बताइए। यह जानकारी फाउंडेशन के पास सुरक्षित रहेगी।</prosody></speak>",
             voice="Polly.Aditi",
             language="hi-IN",
             ssml=True

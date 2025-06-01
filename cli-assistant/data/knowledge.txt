@@ -1,13 +1,13 @@
 # NGO Knowledge Base - Example
 
 ## Organization Information
-Organization Name: Hope Foundation India
+Organization Name: Sankalpiq Foundation India
 Mission: To provide education, healthcare, and livelihood opportunities to underprivileged communities across India.
 Vision: A world where every person has access to basic necessities and opportunities for growth.
 Founded: 2015
 Registration: 80G certified, FCRA approved
 Headquarters: New Delhi, India
-
+Founder:Happy Yadav
 ## Current Programs
 
 ### Education Initiative

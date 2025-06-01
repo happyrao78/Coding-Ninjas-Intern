@@ -43,7 +43,7 @@ async def get_knowledge_base_response(question):
         model = genai.GenerativeModel('gemini-1.5-flash')
         knowledge_base = load_knowledge_base()
         prompt = f"""
-        You are a helpful AI assistant for Prereet Foundation.
+        You are a helpful AI assistant for Sankalpiq Foundation.
         Use ONLY the following information to answer the user's question.
         If the answer isn't found in the provided information, politely say you don't have that information.
         Always answer in Hindi language. Keep the answer concise (2-3 sentences maximum).

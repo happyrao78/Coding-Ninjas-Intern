@@ -13,7 +13,7 @@ def send_thank_you_email(user_name, user_email, blood_group):
         msg = MIMEMultipart()
         msg['From'] = settings.GMAIL_ADDRESS
         msg['To'] = user_email
-        msg['Subject'] = "Thank You for Connecting with Prerit Foundation"
+        msg['Subject'] = "Thank You for Connecting with Sankalpiq Foundation"
         
         body = f"""
         <html>
@@ -29,25 +29,16 @@ def send_thank_you_email(user_name, user_email, blood_group):
         <body>
             <div class="container">
                 <div class="header">
-                    <h2>Prerit Foundation</h2>
+                    <h2>Sankalpiq Foundation</h2>
                 </div>
                 <div class="content">
-                    <p>नमस्ते {user_name} जी,</p>
-                    <p>प्रीरित फाउंडेशन से जुड़ने के लिए आपका हार्दिक धन्यवाद!</p>
-                    <p>हमने आपकी निम्नलिखित जानकारी हमारे डेटाबेस में सुरक्षित कर ली है:</p>
-                    <ul>
-                        <li><strong>नाम:</strong> {user_name}</li>
-                        <li><strong>ईमेल:</strong> {user_email}</li>
-                        {'<li><strong>रक्त समूह:</strong> ' + blood_group + '</li>' if blood_group else ''}
-                    </ul>
-                    <p>हैप्पी यादव जी और हमारी टीम जल्द ही आपसे संपर्क करेगी।</p>
-                    <p>---------------------------------------</p>
+                    
                     <p>Dear {user_name},</p>
-                    <p>Thank you for connecting with Prerit Foundation!</p>
-                    <p>We have securely stored your information. Happy Yadav and our team will contact you soon.</p>
+                    <p>Thank you for connecting with Sankalpiq Foundation!</p>
+                    <p>We have securely stored your information.Our team will contact you soon.</p>
                 </div>
                 <div class="footer">
-                    <p>© 2025 Prerit Foundation. All rights reserved.</p>
+                    <p>© 2025 Sankalpiq Foundation. All rights reserved.</p>
                 </div>
             </div>
         </body>
