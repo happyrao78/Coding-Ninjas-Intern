@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+twilio
+python-dotenv
+googletrans==4.0.0-rc1
+google-generativeai
+python-multipart
+pandas
+gspread
+oauth2client
+email-validator==2.1.0.post1

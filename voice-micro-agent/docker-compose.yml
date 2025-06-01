@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  voice-micro-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: voice-micro-agent
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_PHONE_NUMBER=${TWILIO_PHONE_NUMBER}
+      - TO_NUMBER=${TO_NUMBER}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GMAIL_ADDRESS=${GMAIL_ADDRESS}
+      - GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - PORT=8000
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    depends_on:
+      - voice-micro-agent
+    command: http voice-micro-agent:8000
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"  # For ngrok dashboard
