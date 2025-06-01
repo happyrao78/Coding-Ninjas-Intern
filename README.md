@@ -25,7 +25,7 @@ The Sankalpiq Foundation AI Automation Suite is a comprehensive microservices-ba
 ## Architecture Overview
 
 ### Streamlit UI
-[https://happyrao78-coding-ninjas-intern-clientclient-iypjzf.streamlit.app](https://happyrao78-coding-ninjas-intern-clientclient-iypjzf.streamlit.app)
+[https://sankalpiq.streamlit.app](https://sankalpiq.streamlit.app))
 
 ### High-Level Design (HLD)
 ![High-Level Design](https://www.mermaidchart.com/raw/a8191288-3abc-4075-a659-d0cf9e7ab95c?theme=light&version=v0.1&format=svg)
