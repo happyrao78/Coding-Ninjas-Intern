@@ -1,4 +1,3 @@
-```md
 # Voice Micro-Agent
 
 The Voice Micro-Agent is a dedicated, containerized voice automation service developed for the Sankalpiq platform. It enables NGOs to automate interactions through voice calls, supporting both data collection and intelligent query resolution. This microservice operates independently and is designed to integrate seamlessly with broader outreach and communication efforts.
@@ -128,6 +127,3 @@ For testing the APIs:
 - **Enhanced Speech Recognition**: Use of advanced STT (speech-to-text) systems for improved Hindi accuracy.
 
 ---
-
-This service is an independent module in the Sankalpiq ecosystem and is intended to run in isolation from other agents to provide focused, maintainable, and extensible voice automation capabilities.
-```
