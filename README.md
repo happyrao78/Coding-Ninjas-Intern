@@ -117,7 +117,7 @@ Each agent operates with its own independent architecture and deployment configu
 ## Video Demonstrations
 
 ### Agent Functionality Demos
-- **CLI Micro Agent Demo**: [Link to be provided]
+- **CLI Micro Agent Demo**: <video controls src="https://res.cloudinary.com/dxgpsybjw/video/upload/v1748803813/20250602_001104_itnkwd.mp4" title="[Link]"></video>
 - **Voice Agent Interaction Demo**: [Link to be provided]
 - **WhatsApp Automation Demo**: [Link to be provided]
 - **End-to-End Workflow Demo**: [Link to be provided]
