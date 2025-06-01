@@ -1,15 +1,13 @@
-import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from dotenv import load_dotenv
 
-load_dotenv()
+from app.config import settings
 
 class GoogleSheetsClient:
     def __init__(self):
-        self.creds_file = os.getenv("GOOGLE_SHEETS_CREDENTIALS_FILE")
-        self.sheet_id = os.getenv("GOOGLE_SHEET_ID")
-        self.worksheet_name = os.getenv("WORKSHEET_NAME", "Sheet1")
+        self.creds_file = settings.google_sheets_credentials_file
+        self.sheet_id = settings.google_sheet_id
+        self.worksheet_name = settings.worksheet_name
         self.client = None
         self.sheet = None
     

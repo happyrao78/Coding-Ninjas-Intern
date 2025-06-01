@@ -8,17 +8,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-from dotenv import load_dotenv
 
-load_dotenv()
+from app.config import settings
 
 class WhatsAppClient: 
     def __init__(self):
-        self.message_template = os.getenv("MESSAGE_TEMPLATE", "Hello {ngo_name}, this is an automated message.")
+        self.message_template = settings.custom_message
         self.driver = None
         self.is_initialized = False
         self.wait_time = 60  # seconds to wait for WhatsApp Web to load
-        self.session_file = 'whatsapp_session.pkl'
         
     async def initialize(self):
         """Initialize WhatsApp Web with Selenium and load saved session if available"""
@@ -31,7 +29,7 @@ class WhatsAppClient:
             options.add_experimental_option('useAutomationExtension', False)
             
             # Create user data directory if it doesn't exist
-            user_data_dir = os.path.join(os.getcwd(), "chrome_user_data")
+            user_data_dir = os.path.abspath(settings.chrome_user_data_dir)
             os.makedirs(user_data_dir, exist_ok=True)
             
             # Set up Chrome to use a persistent user data directory
