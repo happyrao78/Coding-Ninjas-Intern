@@ -96,7 +96,7 @@ The connected Google Sheet must contain the following columns:
 ## Future Scope
 
 The current implementation offers a focused CLI-first solution. Future enhancements are planned to improve scalability, observability, and intelligent processing:
-
+ 
 ### Langflow or Agent Orchestration
 
 Integrate Langflow or similar agent design frameworks to allow visually designed workflows for conditional messaging and escalation logic.
