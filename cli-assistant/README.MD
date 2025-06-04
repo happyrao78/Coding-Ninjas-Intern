@@ -14,7 +14,7 @@ NGOs face several operational challenges due to limited resources and increasing
 | ---------------------------- | ---------------------------------------------------------------------------------------- |
 | **Repetitive Communication** | Automates replies to donor and volunteer emails using a knowledge-driven NLP system      |
 | **Knowledge Fragmentation**  | Centralizes important info into a semantic vector-based knowledge base                   |
-| **Scaling Limitations**      | Designed with scalable architecture using modern tools like Kafka and Pinecone           |
+| **Scaling Limitations**      | Designed with scalable architecture using modern tools like Pinecone           |
 | **Human Bottlenecks**        | Reduces dependency on manual processes for communication, tracking, and decision support |
 
 ---
